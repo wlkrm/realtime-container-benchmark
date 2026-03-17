@@ -1,7 +1,11 @@
 # IsoBench Isolation Benchmark Suite
 
+This work is part of a research project of the [Institute for Control Engineering of Machine Tools and Manufacturing Units (ISW) of the University of Stuttgart](https://www.isw.uni-stuttgart.de/).
+
 Automated benchmark suite that measures the impact of Linux isolation mechanisms
 on real-time application performance using the existing cyclic and ping-pong benchmarks.
+
+These are **whitebox tests**: isolation mechanisms are applied individually and in controlled combinations, allowing precise attribution of latency overhead to specific kernel subsystems rather than treating the container runtime as a black box.
 
 ## What it tests
 
@@ -21,6 +25,12 @@ on real-time application performance using the existing cyclic and ping-pong ben
 | 12  | **pid_namespace**     | PID namespace                                       | Tsk struct overhead of PID translation              |
 | 13  | **mount_namespace**   | Mount namespace (private)                           | VFS path resolution overhead                        |
 | 14  | **user_namespace**    | User namespace (root→root)                          | UID/GID credential check overhead                   |
+| 15  | **cgroup_io_latency** | cgroup io.latency controller                        | Block-I/O accounting overhead on cgroup switches    |
+| 16  | **net_cls_cgroup**    | net_cls cgroup packet tagging                       | Per-packet cgroup classid lookup overhead           |
+| 17  | **numa_membind**      | NUMA memory binding (remote node)                   | Cross-NUMA memory access latency penalty            |
+| 18  | **cpu_stress**        | RT under heavy CPU contention                       | Shared resource contention (LLC, memory bandwidth)  |
+| 19  | **uts_ipc_namespace** | UTS + IPC namespace                                 | nsproxy indirection overhead on relevant syscalls   |
+| 20  | **full_docker_like**  | All namespaces + cgroups + seccomp                  | Cumulative overhead of full container stack         |
 
 ### What is NOT tested (by design)
 
