@@ -20,7 +20,7 @@ authors:
     given-names: "Alexander"
     orcid: "https://orcid.org/0000-0002-2548-6620"
 title: "IsoBench - realtime-container-benchmark"
-version: 1.0.0
-doi: TBD
+version: 1.0.1
+doi: https://doi.org/10.5281/zenodo.19072487
 date-released: 2026-03-17
 url: "https://github.com/wlkrm/realtime-container-benchmark"
