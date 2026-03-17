@@ -1,0 +1,25 @@
+[package]
+name = "testapps"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+path = "src/cyclic.rs"
+name = "cyclic"
+
+[[bin]]
+path = "src/pong.rs"
+name = "pong"
+
+[[bin]]
+path = "src/uds_pong.rs"
+name = "uds_pong"
+
+
+[dependencies]
+clap = { version = "4.5.53", features = ["derive"] }
+linux-rt = { git = "https://github.com/marcfir/linux-rt.git", version = "0.4.0" }
+env_logger = "0.11.9"
+log = "0.4"
+anyhow = "1.0"
+

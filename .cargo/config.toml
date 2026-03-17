@@ -1,0 +1,7 @@
+[alias]
+root = "--config .cargo/root-config.toml"
+rrun = "root run"
+rtest = "root test"
+
+[net]
+git-fetch-with-cli = true

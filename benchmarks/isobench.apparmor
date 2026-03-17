@@ -1,0 +1,36 @@
+# AppArmor profile for IsoBench isolation benchmarks.
+#
+# This profile ALLOWS everything but runs in enforce mode, so every
+# security-relevant operation goes through AppArmor's LSM hooks.
+# The goal is to measure the overhead of the MAC checks themselves,
+# not to restrict the application.
+#
+# Load:   sudo apparmor_parser -r benchmarks/isobench.apparmor
+# Unload: sudo apparmor_parser -R benchmarks/isobench.apparmor
+# Run:    aa-exec -p isobench -- ./target/release/cyclic ...
+
+#include <tunables/global>
+
+profile isobench flags=(enforce) {
+  #include <abstractions/base>
+
+  # Allow all capabilities (RT scheduling, mlockall, net admin, etc.)
+  capability,
+
+  # Allow all network operations (UDP send/recv, SO_BINDTODEVICE, etc.)
+  network,
+
+  # Allow all file access recursively (binary, /proc, /sys, output files)
+  /** rwmlkix,
+
+  # Allow all signals (needed for process management)
+  signal,
+
+  # Allow ptrace (not strictly needed, but keeps profile fully permissive)
+  ptrace,
+
+  # Allow mount operations (for completeness)
+  mount,
+  umount,
+  pivot_root,
+}

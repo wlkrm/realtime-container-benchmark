@@ -1,0 +1,6 @@
+/target
+*.html
+*.csv
+__pycache__/
+system_info.txt
+ltex.*
