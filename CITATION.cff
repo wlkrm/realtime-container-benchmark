@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Walker"
+    given-names: "Moritz"
+    orcid: "https://orcid.org/0000-0002-6372-3658"
+  - family-names: "Neumann"
+    given-names: "Rebekka"
+    orcid: "https://orcid.org/0009-0008-7262-509X"
+  - family-names: "Richter"
+    given-names: "Matthias"
+    orcid: "https://orcid.org/0009-0009-9818-7793"
+  - family-names: "Fischer"
+    given-names: "Marc"
+    orcid: "https://orcid.org/0000-0001-8789-9597"
+  - family-names: "Lechler"
+    given-names: "Armin"
+    orcid: "https://orcid.org/0000-0002-4073-1487"
+  - family-names: "Verl"
+    given-names: "Alexander"
+    orcid: "https://orcid.org/0000-0002-2548-6620"
+title: "IsoBench - realtime-container-benchmark"
+version: 1.0.0
+doi: TBD
+date-released: 2026-03-17
+url: "https://github.com/wlkrm/realtime-container-benchmark"
