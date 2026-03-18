@@ -1,8 +1,10 @@
 # IsoBench
 
+Cite this project: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19072487.svg)](https://doi.org/10.5281/zenodo.19072487)
+
 This work is part of a research project of the [Institute for Control Engineering of Machine Tools and Manufacturing Units (ISW) of the University of Stuttgart](https://www.isw.uni-stuttgart.de/).
 
-**Isolation Benchmark Suite** for measuring the impact of Linux isolation mechanisms, that are use in container runtimes, on real-time application performance.
+**Isolation Benchmark Suite** for measuring the impact of Linux isolation mechanisms, that are used in container runtimes, on real-time application performance.
 
 This project benchmarks how various container-like isolation techniques (cgroups, namespaces, seccomp-bpf, AppArmor) affect scheduling jitter and network latency. It runs cyclic timing tests and ping-pong latency measurements under different isolation scenarios to quantify overhead.
 
